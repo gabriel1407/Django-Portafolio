@@ -9,3 +9,4 @@ class Project(models.Model):
     description = CharField(max_length=250)
     image = models.ImageField (upload_to = 'materiales/images/')
     url = URLField(blank=True)
+    
