@@ -1,3 +1,7 @@
+{% extends 'layout.html' %}
+
+{%block content%}
+
 <h2>posts</h2>
 
 {% for post in posts %}
@@ -5,9 +9,11 @@
   <h2>{{post.title}}</h2>
   <h3>{{post.data}}</h3>
   <p>{{post.description|striptags}}</p>
-  <p>{{post.data|date:'%M %d %Y'|upper}}</p>
+  <p>{{post.data|date:'M d Y'|upper}}</p>
   <img src="{{post.image.url}}" alt="{{post.title}}">
 
   <a href="{% url 'blog:post_detail' post.id %}">{{post.title}}</a>
 
 {%endfor%}
+
+{%endblock%}
