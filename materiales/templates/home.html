@@ -6,7 +6,7 @@
 
 <header class="row bg-black">
     <div class="col-md-4">
-        <img src="{% static 'porfolio/REST-API.jpg' %}" width = "300" height = "300" alt="">
+        <img src="{% static 'porfolio/REST-API.jpg' %}" width = "350" height = "350" alt="">
     </div>
 
     <div class="col-md-8 my-auto p-4">
@@ -15,22 +15,38 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt hic deleniti eius veniam praesentium ipsa velit laudantium neque minima facere nam dolorum tempora dolorem nisi eaque omnis porro, quo minus?</p>
         <a href="{% static 'porfolio/Curriculum Gabriel Carvajal.pdf'%}" 
         class="btn btn-primary btn-lg rounded-0 my-3"
+        target="_black"
         >Download CV</a>
     </div>
 
 </header>
 
-{% for project in projects %}
+<div class="row my-4 text-center">
 
-<h2>{{project.title}}</h2>
-<h2>{{project.description}}</h2>
-<img src="{{project.image.url}}" alt="{{project.title}}">
+    <h3>My project</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores libero assumenda nesciunt at quisquam pariatur molestias</p>
 
+    {% for project in projects %}
+    
+<div class="col-md-4 p-4">
+    <div class="card bg-black card-project">
+    <img src="{{project.image.url}}" width="150" height="250" alt="{{project.title}}" class="card-img-top" />
 
-    {% if project.url %}
+    <div class="card-body">
 
-    <a href = "{{project.url}}">{{project.url}}</a>
+        <h2>{{project.title}}</h2>
+        <h2>{{project.description}}</h2>
+        
+        {% if project.url %}
+        
+        <a href="{{project.url}}" class="btn btn-success rounded-0 btn-sm" target="_black">{{project.url}}</a>
+        {% endif %}
 
-    {% endif %} 
-{% endfor %}
-{% endblock  %}
+    </div>
+
+    </div>
+</div>
+    
+    {% endfor %}
+    {% endblock %}
+</div>
