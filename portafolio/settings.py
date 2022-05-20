@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'portafolio.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-"""" 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -83,7 +83,7 @@ DATABASES = {
 }
 
 
-""" 
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -94,7 +94,7 @@ DATABASES = {
         'PORT': 3306,
     }
 }
- 
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
